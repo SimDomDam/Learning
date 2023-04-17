@@ -1,0 +1,42 @@
+'''
+ASSIGNMENT 1
+
+Create a python script which simulates the login to an online casino.
+- ask to the user: name, surname, age
+- verify that the lenght of name and surname is longer than 2 and that the age is at least 18
+- if everything is correct, print a confirmation steing, otherwise signal the error to the user
+- verify that the user will enter data of the correct typology 
+- verify that name and surname start with an uppercase letter
+
+'''
+
+
+print('--------------------------')
+
+# start by inputing the name
+name = str(input('Welcome to the casino!!\n Enter your name here: '))
+
+print('-------------------------')
+
+# while loop to check whether the name is long at least 2 and starts with an uppercase. If so, ask the surname
+while len(name)<2 or name.istitle() == False:
+    name = str(input('Your name must include at least two letters and begin with an uppercase letter!\n\n Enter your name here: '))
+    print('-------------------------')
+else:
+    surname = str(input('Enter your surname here: '))
+    print('-------------------------')
+
+# while loop to check whether the surname is long at least 2 and starts with an uppercase. If so, ask the age
+while len(surname)<2 or surname.istitle() == False:
+   name = str(input('Your surname must include at least two letters and begin with an uppercase letter!\n\n Enter your surname here: '))
+   print('-------------------------')
+else:
+    age = int(input('Enter your age here: '))
+    print('-------------------------')
+
+# while loop to check if the user has an age of at least 18. If so, welcome the user to the casino!    
+while age < 18:
+    age = int(input('To access the casino services, your age need to be at least 18!!\n\n Enter your age here: '))
+    print('-------------------------')
+else:
+    print('SUCCESSFUL LOGIN!\n', 'Welcome', name, surname)
